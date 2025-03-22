@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>나의 감성 홈페이지</title>
+  <style>
+    @font-face {
+      font-family: 'TiquiTaca';
+      src: url('./fonts/TiquiTaca-Regular.ttf') format('truetype');
+    }
+
+    body {
+      background-color: #ffffff;
+      font-family: 'TiquiTaca', 'Nanum Gothic', sans-serif;
+      text-align: center;
+      padding: 50px;
+      color: #000000;
+    }
+
+    .menu img {
+      width: 80px;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .menu img:hover {
+      transform: scale(1.2);
+    }
+
+    .youtube {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    audio {
+      margin-top: 30px;
+      background-color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+ 
+<h1><span class="logo">sominihomepi</span> 🎵</h1>
+
+<style>
+  .logo {
+    color: #4f4443;
+    font-weight: bold;
+  }
+</style>
+
+  <div class="youtube">
+    <iframe width="250" height="170" 
+    src="https://www.youtube.com/embed/Kv2Rr3eTRdA" 
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</body>
+</html>
+
+<div class="menu">
+  <img src="bath.png" class="icon" data-hover="bath_hover.png" alt="목욕 아이콘">
+  <img src="cherry.png" class="icon" data-hover="cherry_hover.png" alt="체리 아이콘">
+  <img src="guitar.png" class="icon" data-hover="guitar_hover.png" alt="기타 아이콘">
+</div>
+
+<script>
+  const icons = document.querySelectorAll('.icon');
+
+  icons.forEach(icon => {
+    const originalSrc = icon.src;
+    const hoverSrc = icon.getAttribute('data-hover');
+
+    icon.addEventListener('mouseenter', () => {
+      icon.src = hoverSrc;
+    });
+
+    icon.addEventListener('mouseleave', () => {
+      icon.src = originalSrc;
+    });
+  });
+</script>
+
+
+<h2>📸 나의 사진첩 📸</h2>
+<div class="gallery">
+  <img src="photo1.jpg" alt="사진1">
+  <img src="photo2.jpg" alt="사진2">
+  <img src="photo3.jpg" alt="사진3">
+</div>
